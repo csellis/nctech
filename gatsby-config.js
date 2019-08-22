@@ -7,15 +7,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
-      resolve: "gatsby-source-shopify",
-      options: {
-        shopName: "level-up-tuts-test-store",
-        accessToken: "4a7180a850bab6c7342da570e7bfc08f",
-        verbose: true,
-        paginationSize: 250,
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
