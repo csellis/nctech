@@ -11,14 +11,15 @@ const IndexPage = () => (
     <div className="bg-gray-200 rounded-lg p-6 font-sans">
       <form
         name="contact"
-        method="POST"
+        method="post"
         data-netlify="true"
-        netlify-honeypot="bottyMcBotface"
+        data-netlify-honeypot="bottyMcBotface"
       >
         <p className="hidden">
           <label htmlFor="bottyMcBotface">
             Dear Human, please don't fill this out:{' '}
-            <input name="bottyMcBotface" />
+            <input type="hidden" name="bottyMcBotface" />
+            <input type="hidden" name="form-name" value="contact" />
           </label>
         </p>
         <p>
