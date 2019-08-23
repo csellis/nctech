@@ -2,46 +2,14 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import ContactForm from '../components/contactForm'
+import Example from '../components/example'
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-
-    <div className="bg-gray-200 rounded-lg p-6 font-sans">
-      <form
-        name="contact"
-        method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bottyMcBotface"
-      >
-        <p className="hidden">
-          <label htmlFor="bottyMcBotface">
-            Dear Human, please don't fill this out:{' '}
-            <input type="hidden" name="bottyMcBotface" />
-            <input type="hidden" name="form-name" value="contact" />
-          </label>
-        </p>
-        <p>
-          <label htmlFor="email">
-            <input
-              type="email"
-              name="email"
-              placeholder="Your email address"
-              className="p-4"
-            />
-          </label>
-        </p>
-
-        <p>
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-4"
-            type="submit"
-          >
-            Subscribe
-          </button>
-        </p>
-      </form>
+    <div className="flex flex-row">
+      <ContactForm className="flex-1" />
+      <Example className="flex-1 h-screen" />
     </div>
   </Layout>
 )
