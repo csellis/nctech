@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { navigate } from 'gatsby'
 
 const encode = data =>
   Object.keys(data)
@@ -31,13 +32,16 @@ const contactForm = () => {
   }
 
   const handleSubmit = e => {
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', form }),
-    })
-      .then(() => alert('Success!'))
-      .catch(error => alert(error))
+    if (form.emailValid) {
+      const body = encode({ 'form-name': 'contact', email: form.email })
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body,
+      })
+        .then(() => navigate('/success'))
+        .catch(error => alert(error))
+    }
 
     e.preventDefault()
   }
