@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { navigate } from 'gatsby'
+import { navigate, Link } from 'gatsby'
 
 const encode = data =>
   Object.keys(data)
@@ -101,7 +101,11 @@ const contactForm = () => {
         Join other North Carolinians interested in Tech.
       </p>
 
-      <p className="mt-8">Published by Simple Creative Webdevelopment</p>
+      <p className="mt-8">Published by Simple Creative Webdevelopment.</p>
+
+      <p className="mt-8">
+        <Link to="/privacy">Privacy</Link>
+      </p>
     </div>
   )
 }
