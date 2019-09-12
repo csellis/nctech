@@ -6,10 +6,7 @@ export default ({ data }) => {
   const post = data.markdownRemark
   return (
     <Layout>
-      <h2>Page</h2>
-      <div>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
+      <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </Layout>
   )
 }

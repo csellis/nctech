@@ -1,5 +1,0 @@
-import './src/assets/css/animate.css'
-// import './src/assets/css/owl.carousel.css'
-// import './src/assets/css/owl.theme.css'
-import './src/assets/css/ionicons.min.css'
-import './src/assets/css/style.css'

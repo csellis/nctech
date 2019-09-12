@@ -4,7 +4,7 @@ import SEO from './seo'
 import './layout.css'
 
 const Layout = ({ children }) => (
-  <div className="h-screen">
+  <div className="min-h-screen bg-gray-100">
     <SEO />
     <div>
       <main>{children}</main>
