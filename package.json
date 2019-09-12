@@ -21,7 +21,7 @@
     "gatsby-transformer-remark": "^2.6.19",
     "gatsby-transformer-sharp": "^2.2.1",
     "js-base64": "^2.5.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.13",
     "netlify-lambda": "^1.6.3",
     "postcss-import": "^12.0.1",
     "prop-types": "^15.7.2",
