@@ -20,6 +20,9 @@ import Button from '@material-ui/core/Button'
 import Divider from '@material-ui/core/Divider'
 import AppBar from '@material-ui/core/AppBar'
 
+import { ThemeProvider } from '@material-ui/styles'
+import theme from '../theme'
+
 import SEO from './seo'
 import Header from './header'
 import './layout.css'
@@ -27,6 +30,12 @@ import './layout.css'
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
+  },
+  appBarSpacer: theme.mixins.toolbar,
+  content: {
+    flexGrow: 1,
+    height: '100vh',
+    overflow: 'auto',
   },
 }))
 
@@ -44,22 +53,27 @@ const PageLayout = ({ children }) => {
   `)
 
   return (
-    <div className={classes.root}>
-      <CssBaseline />
-      <AppBar position="absolute">
-        <Toolbar>
-          <Typography component="h1" variant="h6">
-            <Link component={RouterLink} to="/">
-              {data.site.siteMetadata.title}
-            </Link>
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <SEO />
-      <Container maxWidth="lg">
-        <main>{children}</main>
-      </Container>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className={classes.root}>
+        <CssBaseline />
+        <AppBar position="absolute">
+          <Toolbar>
+            <Typography component="h1" variant="h6">
+              <Link component={RouterLink} to="/" color="inherit">
+                {data.site.siteMetadata.title}
+              </Link>
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <SEO />
+        <Container maxWidth="lg">
+          <main className={classes.content}>
+            <div className={classes.appBarSpacer}></div>
+            {children}
+          </main>
+        </Container>
+      </div>
+    </ThemeProvider>
   )
 }
 
