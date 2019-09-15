@@ -6,7 +6,7 @@ import Example from '../components/example'
 
 const IndexPage = () => (
   <Layout>
-    <div className="flex flex-mobile">
+    <div className="flex sm:flex-col">
       <ContactForm className="flex-1" />
       <Example className="flex-1 h-screen" />
     </div>

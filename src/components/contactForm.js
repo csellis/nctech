@@ -32,16 +32,14 @@ const contactForm = () => {
   }
 
   const handleSubmit = e => {
-    if (form.emailValid) {
-      const body = encode({ 'form-name': 'contact', email: form.email })
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body,
-      })
-        .then(() => navigate('/success'))
-        .catch(error => alert(error))
-    }
+    const body = encode({ 'form-name': 'contact', email: form.email })
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body,
+    })
+      .then(() => navigate('/success'))
+      .catch(error => alert(error))
 
     e.preventDefault()
   }
@@ -87,9 +85,7 @@ const contactForm = () => {
 
         <p>
           <button
-            className={`bg-orange-300 hover:bg-orange-200 font-sans text-lg font-bold py-2 px-4 rounded m-4 ${
-              form.emailValid ? '' : 'cursor-not-allowed opacity-50'
-            }`}
+            className="bg-orange-300 hover:bg-orange-400 font-sans text-lg font-bold py-2 px-4 rounded m-4"
             type="submit"
           >
             Subscribe
