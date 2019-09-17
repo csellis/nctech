@@ -25,7 +25,6 @@ import theme from '../theme'
 
 import SEO from './seo'
 import Header from './header'
-import './layout.css'
 
 const useStyles = makeStyles(theme => ({
   root: {

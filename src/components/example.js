@@ -2,11 +2,8 @@ import React from 'react'
 import './devices.min.css'
 
 const example = () => (
-  <div
-    className="flex-1 bg-yellow-200 h-screen flex"
-    style={{ justifyContent: 'center' }}
-  >
-    <div style={{ alignSelf: 'center', justifySelf: 'center' }}>
+  <div className="flex-1 example">
+    <div className="example__deviceContainer">
       <div className="marvel-device iphone8 silver">
         <div className="notch">
           <div className="camera"></div>

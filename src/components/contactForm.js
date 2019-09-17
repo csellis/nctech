@@ -45,13 +45,9 @@ const contactForm = () => {
   }
 
   return (
-    <div className="flex-1 text-center p-6 font-sans self-center">
-      <h1 className="font-bold inline-block px-8 bg-orange-300 text-4xl">
-        NC Tech Scene
-      </h1>
-      <h2 className="text-xl mt-12">
-        A weekly email newsletter about tech in North Carolina.
-      </h2>
+    <div className="flex-1 contactForm text-center">
+      <h1>NC Tech Scene</h1>
+      <h2>A weekly email newsletter about tech in North Carolina.</h2>
       <form
         name="contact"
         method="post"
@@ -84,22 +80,17 @@ const contactForm = () => {
         </p>
 
         <p>
-          <button
-            className="bg-orange-300 hover:bg-orange-400 font-sans text-lg font-bold py-2 px-4 rounded m-4"
-            type="submit"
-          >
+          <button className="btn" type="submit">
             Subscribe
           </button>
         </p>
       </form>
 
-      <p className="text-lg">
-        Join other North Carolinians interested in Tech.
-      </p>
+      <h4 className="">Join other North Carolinians interested in Tech.</h4>
 
-      <p className="mt-8">Published by Simple Creative Webdevelopment.</p>
+      <p className="hint">Published by Simple Creative Webdevelopment.</p>
 
-      <p className="mt-8">
+      <p className="">
         <Link to="/privacy">Privacy</Link>
       </p>
     </div>
