@@ -33,7 +33,15 @@ $secondary-color: #fefcbf;
 $primary-color: #fbd38d;
 $mobile-width: 576px;
 
-// Animations
+// Animations & Transitions
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+  }
+
 @keyframes fadeInDarken {
     0% {
         background-color: darken($primary-color, 0%);
@@ -264,4 +272,94 @@ $mobile-width: 576px;
         }
     }
 
+  }
+
+
+  /* pageLayout
+
+==================================== */
+
+header {
+    background-color: $primary-color;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 400;
+    height: 64px;
+    transition: height 200ms ease-in;
+    -webkit-transition: height 200ms ease-in;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    font-family: Avenir, Tahoma, sans-serif;
+    font-weight: 400;
+    nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        max-width: 922px;
+        margin: auto;
+        height:44px;
+
+        p, li {
+            color: black;
+        }
+        div {
+            &.logo {
+                grid-area: 1/1;
+                font-family: Gotham, sans-serif;
+                @include mobile() {
+                    padding: 0rem 1rem 0rem 1rem;
+                }
+                h1{
+                    a{
+                        text-decoration: none;
+                        color: #333;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            &.navigation {
+                grid-area: 1/2;
+                text-align: right;
+                
+                ul {
+                    float: right;
+                }
+
+                ul li {
+                    @include va;
+                    list-style-type: none;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+/* Main Content
+  ============================================ */
+  .content {
+    display: grid;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    grid-template-columns: 1fr auto;
+    max-width: 922px;
+    margin: auto;
+    height: calc(100vh);
+    padding-top: 74px;
+    color: #333;
+
+    h1,h2,h3,h4,h5,h6 {
+        font-weight: 300;
+    }
+
+    @include mobile() {
+        padding: 74px 1rem 1rem 1rem;
+    }
   }
