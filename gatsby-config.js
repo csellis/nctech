@@ -5,7 +5,6 @@ module.exports = {
     author: `@slingingdivs`,
   },
   plugins: [
-    `gatsby-plugin-material-ui`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     {
