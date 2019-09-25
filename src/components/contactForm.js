@@ -31,9 +31,22 @@ const contactForm = () => {
     })
   }
 
+  // const handleSubmit = e => {
+  //   const body = encode({ 'form-name': 'contact', email: form.email })
+  //   fetch('/', {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //     body,
+  //   })
+  //     .then(() => navigate('/success'))
+  //     .catch(error => alert(error))
+
+  //   e.preventDefault()
+  // }
+
   const handleSubmit = e => {
-    const body = encode({ 'form-name': 'contact', email: form.email })
-    fetch('/', {
+    const body = JSON.stringify({ email: form.email })
+    fetch('/api/subscribe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body,

@@ -1,5 +1,7 @@
 [build]
-  base = "/"
-  command = "yarn build"
-  functions = "functions" #  netlify-lambda reads this
-  publish = "build"
+  publish = "dist"
+  functions = './.netlify/functions/' 
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
