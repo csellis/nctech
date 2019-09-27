@@ -24,7 +24,7 @@ const example = () => (
           <iframe
             style={{ height: '667px', width: '375px' }}
             title="Iphone Preview"
-            src="https://mailchi.mp/b8b4ad6240c4/ncsu-lands-big-grant-fintech-jobs-coming-to-charlotte"
+            src="https://mailchi.mp/5ab32117f683/nc-tech-awards-announced-lots-happening-next-week"
           ></iframe>
         </div>
       </div>
