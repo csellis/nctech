@@ -46,13 +46,16 @@ const contactForm = () => {
 
   const handleSubmit = e => {
     const body = JSON.stringify({ email: form.email })
-    fetch('/api/subscribe', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body,
-    })
-      .then(() => navigate('/success'))
-      .catch(error => alert(error))
+
+    if (form && !form.bottyMcBotface) {
+      fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body,
+      })
+        .then(() => navigate('/success'))
+        .catch(error => alert(error))
+    }
 
     e.preventDefault()
   }
@@ -64,15 +67,18 @@ const contactForm = () => {
       <form
         name="contact"
         method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bottyMcBotface"
         className="mt-8"
         onSubmit={handleSubmit}
       >
         <p className="hidden">
           <label htmlFor="bottyMcBotface">
             Dear Human, please don't fill this out:{' '}
-            <input type="hidden" name="bottyMcBotface" />
+            <input
+              type="hidden"
+              name="bottyMcBotface"
+              onChange={updateField}
+              value={form.bottyMcBotface}
+            />
             <input type="hidden" name="form-name" value="contact" />
           </label>
         </p>
