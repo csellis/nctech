@@ -31,6 +31,7 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             frontmatter {
               issue
+              html
             }
             fields {
               slug
