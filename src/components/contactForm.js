@@ -6,7 +6,7 @@ const encode = data =>
     .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
     .join('&')
 
-const contactForm = () => {
+const contactForm = ({ latest }) => {
   const [form, setForm] = useState({
     email: '',
     emailValid: false,
@@ -107,6 +107,9 @@ const contactForm = () => {
 
       <h4 className="">Join other North Carolinians interested in Tech.</h4>
 
+      <p>
+        <Link to={`/issue/${latest}`}>Latest Issue ({latest})</Link>
+      </p>
       <p className="hint">Published by Simple Creative Webdevelopment.</p>
 
       <p className="">
