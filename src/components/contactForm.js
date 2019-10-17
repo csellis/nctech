@@ -108,7 +108,7 @@ const contactForm = ({ latest }) => {
       <h4 className="">Join other North Carolinians interested in Tech.</h4>
 
       <p>
-        <Link to={`/issue/${latest}`}>Latest Issue ({latest})</Link>
+        <Link to={`/issue/${latest.issue}`}>Latest Issue ({latest.issue})</Link>
       </p>
       <p className="hint">Published by Simple Creative Webdevelopment.</p>
 

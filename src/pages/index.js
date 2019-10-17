@@ -5,11 +5,11 @@ import ContactForm from '../components/contactForm'
 import Example from '../components/example'
 
 const IndexPage = ({ data }) => {
-  const latest = data.allMarkdownRemark.nodes[0].frontmatter.issue
+  const latest = data.allMarkdownRemark.nodes[0].frontmatter
   return (
     <Layout>
       <ContactForm className="flex-1 contactForm" latest={latest} />
-      <Example />
+      <Example latest={latest} />
     </Layout>
   )
 }
@@ -24,6 +24,7 @@ export const query = graphql`
       nodes {
         frontmatter {
           issue
+          html
         }
       }
     }
