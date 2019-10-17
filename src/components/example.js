@@ -1,7 +1,7 @@
 import React from 'react'
 import './devices.min.css'
 
-const example = () => (
+const example = ({ latest }) => (
   <div className="flex-1 example">
     <div className="example__deviceContainer">
       <div className="marvel-device iphone8 silver">
@@ -24,7 +24,7 @@ const example = () => (
           <iframe
             style={{ height: '667px', width: '375px' }}
             title="Iphone Preview"
-            src="https://mailchi.mp/659cf46663f5/live-and-code-in-nc-epic-set-to-expand"
+            src={latest.html}
           ></iframe>
         </div>
       </div>
