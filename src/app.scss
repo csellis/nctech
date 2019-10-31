@@ -199,6 +199,7 @@ ul {
 
   .text-center {
       text-align: center;
+      align-self: center;
   }
 
 /* Index
@@ -211,14 +212,29 @@ ul {
       align-items: center;
       justify-content: center;
 
-      @include mobile() {
-          padding: 2rem 1rem;
+      
+        .particles {
+            z-index: 0;
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 50%;
 
-          div.example__deviceContainer {
+            @include mobile() {
+                display: none;
+            }
+        }
+
+        @include mobile() {
+            padding: 2rem 1rem;
+
+            div.example__deviceContainer {
             zoom: 0.8;
             -moz-transform: scale(0.8);
         }
-      }
+    }
   }
 
   .contactForm {
@@ -268,7 +284,7 @@ ul {
             font-size: 1rem;
             line-height: 1rem;
             padding: 1.2rem;
-            width: 18rem;
+            width: auto;
             margin-top: 1.2rem;
         }
     }

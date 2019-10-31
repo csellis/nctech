@@ -1,9 +1,35 @@
 import React from 'react'
+import Particles from 'react-particles-js'
+
 import './devices.min.css'
+import './base.css'
+
+const particlesOptions = {
+  particles: {
+    number: {
+      value: 50,
+    },
+    color: {
+      // value: '#fbd38d',
+      value: '#F6AD55',
+      // value: '#333',
+    },
+    size: {
+      value: 3,
+    },
+    line_linked: {
+      enable: true,
+      color: '#F6AD55',
+      width: '1',
+      opacity: '1',
+    },
+  },
+}
 
 const example = ({ latest }) => (
   <div className="flex-1 example">
     <div className="example__deviceContainer">
+      <Particles className="particles" params={particlesOptions} />
       <div className="marvel-device iphone8 silver">
         <div className="notch">
           <div className="camera"></div>
