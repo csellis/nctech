@@ -10,9 +10,7 @@ const particlesOptions = {
       value: 50,
     },
     color: {
-      // value: '#fbd38d',
       value: '#F6AD55',
-      // value: '#333',
     },
     size: {
       value: 3,

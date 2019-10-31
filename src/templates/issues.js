@@ -51,20 +51,11 @@ const issues = ({ data }) => {
             NC Tech Scene
           </Link>
         </div>
+        <div className="issuesPager">
+          <div>{prevNumber}</div>
+          <div>{nextNumber}</div>
+        </div>
       </nav>
-      <div
-        style={{
-          height: '40px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          width: '600px',
-          margin: 'auto',
-          alignItems: 'center',
-        }}
-      >
-        <div>{prevNumber}</div>
-        <div>{nextNumber}</div>
-      </div>
       <iframe
         style={{
           flex: 1,

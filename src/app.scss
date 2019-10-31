@@ -377,3 +377,20 @@ header {
         padding: 74px 1rem 1rem 1rem;
     }
   }
+
+
+/* Issues
+  ====================================================== */
+
+  .issuesPager {
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 600px;
+
+        @include mobile() {
+            width: calc(100vw - 2rem);
+            margin: 0rem 1rem;
+        }
+  }
