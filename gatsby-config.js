@@ -3,6 +3,7 @@ module.exports = {
     title: `NC Tech Scene`,
     description: `North Carolina builds tech.`,
     author: `@slingingdivs`,
+    siteUrl: `https://nctechscene.com`,
   },
   plugins: [
     `gatsby-plugin-sitemap`,
