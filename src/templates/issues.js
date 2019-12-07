@@ -2,9 +2,32 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/pageLayout'
 
+const Issue = ({ html, post }) => {
+  if (html) {
+    return (
+      <div className="issueWrapper">
+        <div id="issueContent" dangerouslySetInnerHTML={{ __html: html }} />
+      </div>
+    )
+  }
+
+  return (
+    <iframe
+      style={{
+        flex: 1,
+        minHeight: 'calc(100vh - 40px - 8px)',
+        border: 'none',
+      }}
+      title="Iphone Preview"
+      src={post.html}
+    ></iframe>
+  )
+}
+
 const issues = ({ data }) => {
   // console.log(data)
   const post = data.markdownRemark.frontmatter
+  const { html } = data.markdownRemark
   const topIssueNumber = data.allMarkdownRemark.nodes[0].frontmatter.issue
 
   // console.log(topIssueNumber)
@@ -56,15 +79,7 @@ const issues = ({ data }) => {
           <div>{nextNumber}</div>
         </div>
       </nav>
-      <iframe
-        style={{
-          flex: 1,
-          minHeight: 'calc(100vh - 40px - 8px)',
-          border: 'none',
-        }}
-        title="Iphone Preview"
-        src={post.html}
-      ></iframe>
+      <Issue html={html} post={post} />
     </div>
   )
 }
@@ -72,6 +87,7 @@ const issues = ({ data }) => {
 export const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
       frontmatter {
         html
         issue
