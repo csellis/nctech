@@ -90,6 +90,7 @@ const contactForm = ({ latest }) => {
             <input
               type="email"
               name="email"
+              id="email"
               placeholder="Email address"
               value={form.email}
               onChange={updateField}
