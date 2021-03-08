@@ -22,8 +22,6 @@ This project is built with [GatsbyJS][gatsby], [TailwindCSS][tailwind], & [Netli
 
 ## 💫 Deploy & CD
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/64f2bb05-c466-4bd8-98e9-853d802fc353/deploy-status)](https://app.netlify.com/sites/nctech/deploys)
-
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
 
 
